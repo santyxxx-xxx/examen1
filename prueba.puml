@@ -1,0 +1,78 @@
+@startuml
+
+' =================== CLASES BASE ===================
+
+class Curso {
+  - nombre: String
+  - duracionSemanas: int
+  - precio: double
+  - docente: Docente
+  + Curso(nombre: String, duracionSemanas: int, precio: double)
+  + asignarDocente(docente: Docente): void
+  + mostrarResumen(): void
+  + getNombre(): String
+  + getDuracionSemanas(): int
+  + getPrecio(): double
+  + getDocente(): Docente
+}
+
+class CursoRegular {
+  + CursoRegular(nombre: String, duracionSemanas: int, precio: double)
+}
+
+class CursoCertificado {
+  + CursoCertificado(nombre: String, duracionSemanas: int, precio: double)
+  + calcularPrecioFinal(): double
+  + mostrarResumen(): void
+}
+
+class Docente {
+  - nombre: String
+  - id: String
+  + Docente(nombre: String, id: String)
+  + getNombre(): String
+  + getId(): String
+  + mostrarPerfil(): void
+}
+
+class Estudiante {
+  - nombre: String
+  - edad: int
+  - id: String
+  + Estudiante(nombre: String, edad: int, id: String)
+  + mostrarDatos(): void
+  + validarEdad(): boolean
+  + getNombre(): String
+  + getEdad(): int
+  + getId(): String
+}
+
+class Matricula {
+  - estudiante: Estudiante
+  - curso: Curso
+  - evaluacion: Evaluacion
+  + Matricula(estudiante: Estudiante, curso: Curso)
+  + registrarEvaluacion(evaluacion: Evaluacion): void
+  + mostrarDetalle(): void
+}
+
+class Evaluacion {
+  - nota: double
+  + Evaluacion(nota: double)
+  + getNota(): double
+  + getResultado(): String
+}
+
+' =================== HERENCIA ===================
+
+CursoRegular --|> Curso
+CursoCertificado --|> CursoRegular
+
+' =================== ASOCIACIONES ===================
+
+Curso --> Docente
+Matricula --> Estudiante
+Matricula --> Curso
+Matricula --> Evaluacion
+
+@enduml
