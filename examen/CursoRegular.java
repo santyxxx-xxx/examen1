@@ -1,4 +1,4 @@
-package epnplus;
+package examen;
 
 // CursoRegular.java
 public class CursoRegular extends Curso {

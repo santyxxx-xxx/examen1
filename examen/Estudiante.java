@@ -1,4 +1,4 @@
-package epnplus;
+package examen;
 
 public class Estudiante {
     private String nombre;

@@ -1,4 +1,4 @@
-package epnplus;
+package examen;
 public abstract class Curso {
     private String nombre;
     private int duracionSemanas;

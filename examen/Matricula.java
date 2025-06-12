@@ -1,4 +1,4 @@
-package epnplus;
+package examen;
 
 public class Matricula {
     private Estudiante estudiante;

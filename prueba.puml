@@ -1,7 +1,10 @@
 @startuml
+package Main{
+class main
+}
 
 ' =================== CLASES BASE ===================
-
+package examen{
 class Curso {
   - nombre: String
   - duracionSemanas: int
@@ -61,6 +64,7 @@ class Evaluacion {
   + Evaluacion(nota: double)
   + getNota(): double
   + getResultado(): String
+}
 }
 
 ' =================== HERENCIA ===================
