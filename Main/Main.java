@@ -35,6 +35,10 @@ public class Main {
             System.out.println("Opción inválida.");
             return;
         }
+        if (cursoElegido.getDocente() == null) {
+            System.out.println("Ese curso no tiene docente. No se puede continuar.");
+            return;
+        }
 
         cursoElegido.mostrarResumen();
 
